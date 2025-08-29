@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VectraDex - Interface</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+        .parallax-bg {
+            background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .trail {
+            position: absolute;
+            height: 6px;
+            width: 6px;
+            border-radius: 3px;
+            background: #4f46e5;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        .text-trail-effect {
+            font-weight: 900;
+            color: #e2e8f0;
+            cursor: pointer;
+        }
+        .glass-effect {
+            background: rgba(17, 24, 39, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .logo-svg {
+            width: 48px;
+            height: 48px;
+        }
+        .logo-text {
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="relative">
+
+    <!-- Efeito de Rastro de Texto -->
+    <div id="text-trail-container" class="fixed top-0 left-0 w-full h-full pointer-events-none z-50"></div>
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 glass-effect">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-3">
+                <!-- Logo SVG do VectraDex -->
+                <svg class="logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 0L100 28.87V86.6L50 115.47L0 86.6V28.87L50 0Z" fill="#1a1a1a"/>
+                    <path d="M50 15.3L83.3 34.17V71.9L50 90.77L16.7 71.9V34.17L50 15.3Z" fill="#4f46e5"/>
+                    <path d="M50 30.5L66.65 40.07V59.2L50 68.77L33.35 59.2V40.07L50 30.5Z" fill="#a5b4fc"/>
+                </svg>
+                <span class="logo-text">VectraDex</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-slate-300 hover:text-white transition-colors">Sobre</a>
+                <a href="#features" class="text-slate-300 hover:text-white transition-colors">Como Funciona</a>
+                <a href="#contact" class="text-slate-300 hover:text-white transition-colors">Contato</a>
+            </nav>
+            <button id="login-btn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">
+                Login
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section com Parallax -->
+    <section class="h-screen flex items-center justify-center parallax-bg">
+        <div class="text-center text-white z-10 p-4">
+            <h1 class="text-5xl md:text-7xl font-black mb-4 leading-tight">
+                <span class="text-trail-effect">Análise.</span> <span class="text-trail-effect">Visualização.</span> <span class="text-trail-effect">Decisão.</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-indigo-300 font-medium">O VectraDex transforma dados brutos em insights poderosos.</p>
+        </div>
+        <div class="absolute inset-0 bg-black opacity-60"></div>
+    </section>
+
+    <main class="relative z-10 bg-[#0a0a0a]">
+        <!-- About Section -->
+        <section id="about" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold mb-4">Interface VectraDex</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto mb-8"></div>
+                <div class="flex justify-center">
+                    <img src="https://raw.githubusercontent.com/FelipeHl-create/VectraDex/main/VectraDex.PNG" alt="Interface do VectraDex" class="rounded-xl shadow-2xl max-w-full md:max-w-4xl border-4 border-gray-800" onerror="this.onerror=null;this.src='https://placehold.co/1000x600/0a0a0a/e2e8f0?text=Interface+VectraDex';">
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-20 bg-[#111111]">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold mb-4">Como Funciona?</h2>
+                    <div class="w-24 h-1 bg-indigo-600 mx-auto"></div>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="p-8 rounded-xl glass-effect">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-900 text-indigo-300 mx-auto mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M208,88H152V32a8,8,0,0,0-8-8H112a8,8,0,0,0-8,8V88H48a8,8,0,0,0-8,8v40a8,8,0,0,0,8,8h56v56a8,8,0,0,0,8,8h32a8,8,0,0,0,8-8V144h56a8,8,0,0,0,8-8V96A8,8,0,0,0,208,88Zm-56,56V96h48v40Z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">1. Carregamento de Dados</h3>
+                        <p class="text-slate-400">Importe seus arquivos de dados de forma simples e rápida. O VectraDex suporta os formatos mais comuns, como CSV e Excel, garantindo compatibilidade e flexibilidade.</p>
+                    </div>
+                    <div class="p-8 rounded-xl glass-effect">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-900 text-indigo-300 mx-auto mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">2. Seleção e Filtragem</h3>
+                        <p class="text-slate-400">Escolha as colunas relevantes para sua análise. Aplique filtros dinâmicos para segmentar os dados e focar apenas no que é mais importante para sua investigação.</p>
+                    </div>
+                    <div class="p-8 rounded-xl glass-effect">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-900 text-indigo-300 mx-auto mb-6">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M240,144v64a16,16,0,0,1-16,16H32a16,16,0,0,1-16-16V48A16,16,0,0,1,32,32H96a8,8,0,0,1,0,16H32V208H224V144a8,8,0,0,1,16,0Zm-93.66-61.66a8,8,0,0,0,11.32,0L240,0,224,16l-82.34,82.34a8,8,0,0,0,0,11.32Z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">3. Visualização Gráfica</h3>
+                        <p class="text-slate-400">Gere gráficos interativos (barras, linhas, pizza, etc.) instantaneamente. A visualização de dados nunca foi tão fácil, permitindo a identificação de tendências e padrões de forma clara.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold mb-4">Entre em Contato</h2>
+                    <div class="w-24 h-1 bg-indigo-600 mx-auto"></div>
+                    <p class="max-w-2xl mx-auto text-lg text-slate-300 mt-4">
+                        Tem alguma dúvida ou sugestão? Adoraríamos ouvir você.
+                    </p>
+                </div>
+                <div class="max-w-xl mx-auto">
+                    <form action="#" method="POST" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-slate-300">Nome</label>
+                            <input type="text" id="name" name="name" class="mt-1 block w-full bg-gray-900 border border-gray-700 rounded-md shadow-sm py-3 px-4 text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-slate-300">Email</label>
+                            <input type="email" id="email" name="email" class="mt-1 block w-full bg-gray-900 border border-gray-700 rounded-md shadow-sm py-3 px-4 text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-slate-300">Mensagem</label>
+                            <textarea id="message" name="message" rows="4" class="mt-1 block w-full bg-gray-900 border border-gray-700 rounded-md shadow-sm py-3 px-4 text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 focus:ring-offset-gray-900">
+                                Enviar Mensagem
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-[#111111] border-t border-gray-800">
+        <div class="container mx-auto py-6 px-6 text-center text-slate-400">
+            <p>&copy; 2024 VectraDex. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
+        <div class="bg-gray-900 p-8 rounded-lg shadow-xl w-full max-w-sm m-4 relative border border-gray-700">
+            <button id="close-modal-btn" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path></svg>
+            </button>
+            <h2 class="text-2xl font-bold text-center text-white mb-6">Acesso Restrito</h2>
+            <div id="login-error" class="bg-red-900 border border-red-700 text-red-200 px-4 py-2 rounded-md mb-4 text-sm hidden">
+                Email ou senha inválidos.
+            </div>
+             <div id="login-success" class="bg-green-900 border border-green-700 text-green-200 px-4 py-2 rounded-md mb-4 text-sm hidden">
+                Login bem-sucedido!
+            </div>
+            <form id="login-form" class="space-y-4">
+                <div>
+                    <label for="login-email" class="block text-sm font-medium text-slate-300">Email</label>
+                    <input type="email" id="login-email" required class="mt-1 block w-full bg-gray-800 border border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+                <div>
+                    <label for="login-password" class="block text-sm font-medium text-slate-300">Senha</label>
+                    <input type="password" id="login-password" required class="mt-1 block w-full bg-gray-800 border border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+                <div>
+                    <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 focus:ring-offset-gray-900">
+                        Entrar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Lógica do Header com efeito de scroll ---
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('py-2');
+                    header.classList.remove('py-4');
+                } else {
+                    header.classList.add('py-4');
+                    header.classList.remove('py-2');
+                }
+            });
+
+            // --- Lógica do Modal de Login ---
+            const loginBtn = document.getElementById('login-btn');
+            const loginModal = document.getElementById('login-modal');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const loginForm = document.getElementById('login-form');
+            const loginError = document.getElementById('login-error');
+            const loginSuccess = document.getElementById('login-success');
+
+            loginBtn.addEventListener('click', () => loginModal.classList.remove('hidden'));
+            closeModalBtn.addEventListener('click', () => loginModal.classList.add('hidden'));
+            loginModal.addEventListener('click', (e) => {
+                if (e.target === loginModal) {
+                    loginModal.classList.add('hidden');
+                }
+            });
+
+            // --- Lógica de Autenticação (APENAS FRONT-END - NÃO SEGURO) ---
+            // IMPORTANTE: Este método de login é apenas para demonstração visual.
+            // As credenciais estão expostas no código do cliente.
+            // Para um sistema seguro, é ESSENCIAL usar um backend com banco de dados e autenticação segura.
+            const users = {
+                "master@gmail.com": "masterui123@",
+                "server@gmail.com": "server123ui"
+            };
+
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = document.getElementById('login-email').value;
+                const password = document.getElementById('login-password').value;
+                
+                loginError.classList.add('hidden');
+                loginSuccess.classList.add('hidden');
+
+                if (users[email] && users[email] === password) {
+                    loginSuccess.textContent = `Login bem-sucedido como ${email}!`;
+                    loginSuccess.classList.remove('hidden');
+                    // Fecha o modal após 2 segundos
+                    setTimeout(() => {
+                        loginModal.classList.add('hidden');
+                        loginSuccess.classList.add('hidden');
+                        loginForm.reset();
+                    }, 2000);
+                } else {
+                    loginError.classList.remove('hidden');
+                }
+            });
+
+            // --- Lógica do Efeito de Rastro de Texto ---
+            const textElements = document.querySelectorAll('.text-trail-effect');
+            const trailCount = 15;
+            const trails = [];
+            let mouseX = -100, mouseY = -100;
+
+            for (let i = 0; i < trailCount; i++) {
+                const trail = document.createElement('div');
+                trail.className = 'trail';
+                document.body.appendChild(trail);
+                trails.push({
+                    el: trail,
+                    x: mouseX,
+                    y: mouseY
+                });
+            }
+
+            window.addEventListener('mousemove', e => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+            
+            function animateTrails() {
+                let x = mouseX;
+                let y = mouseY;
+                
+                trails.forEach((trail, index) => {
+                    const nextTrail = trails[index + 1] || trails[0];
+                    
+                    trail.x += (x - trail.x) * 0.5;
+                    trail.y += (y - trail.y) * 0.5;
+                    
+                    trail.el.style.left = trail.x + 'px';
+                    trail.el.style.top = trail.y + 'px';
+                    
+                    x = trail.x;
+                    y = trail.y;
+                });
+                
+                requestAnimationFrame(animateTrails);
+            }
+            
+            animateTrails();
+
+        });
+    </script>
+</body>
+</html>
